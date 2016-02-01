@@ -29,15 +29,21 @@ Check out the **Problems Found** section below if you encounter any errors while
  ```
   
  * These libraries are listed below.
+
  a. gPb-UCM from http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_full.tgz.
+ 
  b. VLFeat from http://www.vlfeat.org/.
+ 
  c. liblinear from http://www.csie.ntu.edu.tw/~cjlin/liblinear/.
+ 
  d. liblinear dense from http://ttic.uchicago.edu/~smaji/projects/digits/.
+ 
  e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
   * Set executable permission for colorDescriptor.
   ```sh
   $ chmod +x external/colorDescriptor
   ```
+  
  f. Image Stack Library https://code.google.com/p/imagestack/
   * Set executable permission for ImageStack.
   ```sh
