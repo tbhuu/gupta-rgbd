@@ -46,7 +46,8 @@ Check out the **Problems Found** section below if you encounter any problems whi
     e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
    
    f. Image Stack Library https://code.google.com/p/imagestack/.
-    * Create the following folder:
+    * The Image Stack Lib that already exists in the **rgbd** repository does not seem to be working. You should delete the content of folder imagestack-src, download library using the link above and extract it to imagestack-src.
+    * Create the following folders:
     ```sh
     $ mkdir external/imagestack-src/bin
     $ mkdir external/imagestack-src/bin/build
