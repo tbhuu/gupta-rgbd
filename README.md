@@ -48,6 +48,7 @@ Check out the **Problems Found** section below if you encounter any errors while
    ```sh
    $ chmod +x external/ImageStack
    ```
+   
 4. Run the matlab code
  a. Open matlab, navigate to folder **rgbd**, run **startup.m**.
  b. Setup the directories for storing results.
@@ -76,12 +77,12 @@ Check out the **Problems Found** section below if you encounter any errors while
   ```
  d. We also provide a sample pair of RGB-D image for testing the system
   * Download two files **img_5001.png** and **img_5001.mat** in this repository and put it in folder **rgbd**.
-  * Since **img_5001.mat** contains the precomputed point cloud, you need to modify the code in **runAll.m** from.
+  * Since **img_5001.mat** contains the precomputed point cloud, you need to modify the code in **runAll.m** from:
   ```sh
   33. [x3 y3 z3] = getPointCloudFromZ(double(depthImage*100), cameraMatrix, 1);
   34. save(fullfile(paths.pcDir, [imName '.mat']), 'x3', 'y3', 'z3');
   ```
-  * into.
+  * into:
   ```sh
   33. %[x3 y3 z3] = getPointCloudFromZ(double(depthImage*100), cameraMatrix, 1);
   34. x3 = depthImage.x3;
@@ -100,25 +101,25 @@ Check out the **Problems Found** section below if you encounter any errors while
 1. Performance
  * It takes a fair amount of time to run a pair of RGB-D image. You can speed up the performace by replacing **parfor** statement with **for** statement.
 2. Missing libraries when building the dependencies in folder **external** 
- * Fix by.
+ * Fix by:
  ```sh
  $ sudo apt-get install libname
  ```
 3. Cannot set executable permission for **colorDescriptor** and **ImageStack**
  * If you store your repository in a NTFS/FAT hard drive, you cannot set executable permission.
- * Fix by: moving colorDescriptor and ImageStack to Ubuntu hard drive.
+ * Fix by: moving colorDescriptor and ImageStack to Ubuntu hard drive
  ```sh
  $ mv external/colorDescriptor /home/path/to/dir
  $ mv external/ImageStack /home/path/to/dir 
  ```
- * then set the permission as instructed above.
- * modify the paths to these dependencies in COM/getPaths.m from.
+ * then set the permission as instructed above
+ * modify the paths to these dependencies in COM/getPaths.m from:
  ```sh
  46. pathstr = fileparts(mfilename('fullpath'));
  47. paths.siftLib = fullfile(pathstr, '..', 'external', 'colorDescriptor');
  48. paths.imageStackLib = fullfile(pathstr, '..', 'external', 'ImageStack');
  ```
- * into.
+ * into:
  ```sh
  46. pathstr = fileparts(mfilename('fullpath'));
  47. paths.siftLib = fullfile('/home/path/to/dir', 'colorDescriptor');
