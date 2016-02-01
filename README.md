@@ -63,11 +63,14 @@ Check out the **Problems Found** section below if you encounter any errors while
  $ mkdir cachedir/release/cache/visOut/ucm
  ```
  * You can run the system on a new pair of RGB-D image by using the **runAll.m** function.
+
   * Provide the following parameters for **runAll.m**:
+  
    * imNum: id for the output, it could be any integer starting from 1
    * rgbImage: the RGB image
    * depthImage: the depth image
    * cameraMatrix: the parameters of the Kinect camera, it is used to project the depth image into the point cloud, you can find the Kinect parameters in the toolbox of the NYU v2 Dataset (http://cs.nyu.edu/~silberman/code/toolbox_nyu_depth_v2.zip)
+ 
   * Example:
   ```sh
   matlab > rgbImage = imread(rgbName)
