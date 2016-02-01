@@ -134,8 +134,8 @@ Check out the **Problems Found** section below if you encounter any problems whi
  * If you store your repository in a NTFS/FAT hard drive, you cannot set executable permission.
  * Fix by: moving colorDescriptor and ImageStack to Ubuntu hard drive
  ```sh
- $ mv external/colorDescriptor /home/path/to/dir
- $ mv external/ImageStack /home/path/to/dir 
+ $ mv colorDescriptor /home/path/to/dir
+ $ mv ImageStack /home/path/to/dir 
  ```
  * then set the permission as instructed above
  * modify the paths to these dependencies in COM/getPaths.m from:
