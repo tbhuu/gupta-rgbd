@@ -44,22 +44,29 @@ Check out the **Problems Found** section below if you encounter any problems whi
     ```
    
     e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
-     * Set executable permission for colorDescriptor.
-    
-   ```sh
-   $ chmod +x external/colorDescriptor
-   ```
    
    f. Image Stack Library https://code.google.com/p/imagestack/.
-    * After building all the dependencies, set executable permission for ImageStack.
+    * Create the following folder:
     ```sh
-    $ chmod +x external/ImageStack
+    $ mkdir external/imagestack-src/bin
+    $ mkdir external/imagestack-src/bin/build
     ```
+    
   You can use the scripts external/build_external.sh to build them.
   ```sh
   $ cd external
   $ sh build_external.sh
   $ cd ..
+  ```
+  
+  After building all the dependencies:
+  * Set executable permission for colorDescriptor.
+  ```sh
+  $ chmod +x external/colorDescriptor
+  ```
+  * Set executable permission for ImageStack.
+  ```sh
+  $ chmod +x external/ImageStack
   ```
    
 4. Run the matlab code
