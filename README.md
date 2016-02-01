@@ -86,6 +86,9 @@ Check out the **Problems Found** section below if you encounter any problems whi
  $ mkdir cachedir/release/cache/visOut/cc
  $ mkdir cachedir/release/cache/visOut/ss
  $ mkdir cachedir/release/cache/visOut/ucm
+ $ mkdir cachedir/release/output/ucm
+ $ mkdir cachedir/release/output/segmentation
+ $ mkdir cachedir/release/output/amodal
  ```
  * You can run the system on a new pair of RGB-D image by using the **runAll.m** function.
    * Provide the following parameters for **runAll.m**:
