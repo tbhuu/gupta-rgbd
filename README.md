@@ -31,6 +31,7 @@ Check out the **Problems Found** section below if you encounter any problems whi
    
     b. VLFeat from http://www.vlfeat.org/.
     * The VLFEAT that already exists in the **rgbd** repository does not seem to be working. You should delete the folder vlfeat. Then, you download the library using the link above, extract it, rename it to vlfeat and copy it to folder external.
+    * Copy folder vlfeat/toolbox/mex/mexa64 to vlfeat/.
    
    c. liblinear from http://www.csie.ntu.edu.tw/~cjlin/liblinear/.
     * The liblinear that already exists in the **rgbd** repository does not seem to be working. You should delete the folder liblinear-1.94. Then, you download the library using the link above, extract it, rename it to liblinear-1.94 and copy it to folder external.
