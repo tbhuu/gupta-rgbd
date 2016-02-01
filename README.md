@@ -40,6 +40,7 @@ Check out the **Problems Found** section below if you encounter any errors while
    
     e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
      * Set executable permission for colorDescriptor.
+     
      ```sh
      $ chmod +x external/colorDescriptor
      ```
@@ -78,25 +79,25 @@ Check out the **Problems Found** section below if you encounter any errors while
     ```
  * We also provide a sample pair of RGB-D image for testing the system
    * Download two files **img_5001.png** and **img_5001.mat** in this repository and put it in folder **rgbd**.
-   * Since **img_5001.mat** contains the precomputed point cloud, you need to modify the code in **runAll.m** from:
-   ```sh
-   33. [x3 y3 z3] = getPointCloudFromZ(double(depthImage*100), cameraMatrix, 1);
-   34. save(fullfile(paths.pcDir, [imName '.mat']), 'x3', 'y3', 'z3');
-   ```
-   * into:
-   ```sh
-   33. %[x3 y3 z3] = getPointCloudFromZ(double(depthImage*100), cameraMatrix, 1);
-   34. x3 = depthImage.x3;
-   35. y3 = depthImage.y3;
-   36. z3 = depthImage.z3;
-   37. save(fullfile(paths.pcDir, [imName '.mat']), 'x3', 'y3', 'z3');
-   ```
-   * Example:
-   ```sh
-   matlab > rgbImage = imread('img_5001.png')
-   matlab > depthImage = load('img_5001.mat')
-   matlab > runAll(1, rgbImage, depthImage, [])
-   ```
+    * Since **img_5001.mat** contains the precomputed point cloud, you need to modify the code in **runAll.m** from:
+    ```sh
+    33. [x3 y3 z3] = getPointCloudFromZ(double(depthImage*100), cameraMatrix, 1);
+    34. save(fullfile(paths.pcDir, [imName '.mat']), 'x3', 'y3', 'z3');
+    ```
+     * into:
+     ```sh
+     33. %[x3 y3 z3] = getPointCloudFromZ(double(depthImage*100), cameraMatrix, 1);
+     34. x3 = depthImage.x3;
+     35. y3 = depthImage.y3;
+     36. z3 = depthImage.z3;
+     37. save(fullfile(paths.pcDir, [imName '.mat']), 'x3', 'y3', 'z3');
+     ```
+      * Example:
+      ```sh
+      matlab > rgbImage = imread('img_5001.png')
+      matlab > depthImage = load('img_5001.mat')
+      matlab > runAll(1, rgbImage, depthImage, [])
+      ```
 
 ## Problems Found
 1. Performance
