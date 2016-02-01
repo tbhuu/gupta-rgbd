@@ -61,17 +61,16 @@ Check out the **Problems Found** section below if you encounter any problems whi
   ```sh
   $ cd external
   $ sh build_external.sh
-  $ cd ..
   ```
   
   After building all the dependencies:
   * Set executable permission for colorDescriptor.
   ```sh
-  $ chmod +x external/colorDescriptor
+  $ chmod +x colorDescriptor
   ```
   * Set executable permission for ImageStack.
   ```sh
-  $ chmod +x external/ImageStack
+  $ chmod +x ImageStack
   ```
    
 4. Run the matlab code
@@ -138,6 +137,10 @@ Check out the **Problems Found** section below if you encounter any problems whi
  $ mv ImageStack /home/path/to/dir 
  ```
  * then set the permission as instructed above
+ ```sh
+ $ chmod +x /home/path/to/dir/colorDescriptor
+ $ chmod +x /home/path/to/dir/ImageStack
+ ```
  * modify the paths to these dependencies in COM/getPaths.m from:
  ```sh
  46. pathstr = fileparts(mfilename('fullpath'));
