@@ -51,7 +51,7 @@ Check out the **Problems Found** section below if you encounter any errors while
    
 4. Run the matlab code
  * Open matlab, navigate to folder **rgbd**, run **startup.m**.
- * Setup the directories for storing results.
+ * Setup the directories for storing results:
  ```sh
  $ mkdir cachedir/release/cache
  $ mkdir cachedir/release/cache/sceneOuts
