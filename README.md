@@ -28,7 +28,7 @@ All dependencies are stored in folder **external**. You can use the scripts exte
 $ sh external/build_external.sh
 ```
   
-These libraries are listed below.
+These libraries are:
 
   a. gPb-UCM from http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_full.tgz.
  
