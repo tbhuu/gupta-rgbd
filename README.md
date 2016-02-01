@@ -50,8 +50,8 @@ Check out the **Problems Found** section below if you encounter any errors while
    ```
    
 4. Run the matlab code
- a. Open matlab, navigate to folder **rgbd**, run **startup.m**.
- b. Setup the directories for storing results.
+ * Open matlab, navigate to folder **rgbd**, run **startup.m**.
+ * Setup the directories for storing results.
  ```sh
  $ mkdir cachedir/release/cache
  $ mkdir cachedir/release/cache/sceneOuts
@@ -62,7 +62,7 @@ Check out the **Problems Found** section below if you encounter any errors while
  $ mkdir cachedir/release/cache/visOut/ss
  $ mkdir cachedir/release/cache/visOut/ucm
  ```
- c. You can run the system on a new pair of RGB-D image by using the **runAll.m** function.
+ * You can run the system on a new pair of RGB-D image by using the **runAll.m** function.
   * Provide the following parameters for **runAll.m**:
    * imNum: id for the output, it could be any integer starting from 1
    * rgbImage: the RGB image
@@ -75,7 +75,7 @@ Check out the **Problems Found** section below if you encounter any errors while
   matlab > cameraMatrix = load(cameraName) 
   matlab > runAll(1, rgbImage, depthImage, cameraMatrix)
   ```
- d. We also provide a sample pair of RGB-D image for testing the system
+ * We also provide a sample pair of RGB-D image for testing the system
   * Download two files **img_5001.png** and **img_5001.mat** in this repository and put it in folder **rgbd**.
   * Since **img_5001.mat** contains the precomputed point cloud, you need to modify the code in **runAll.m** from:
   ```sh
