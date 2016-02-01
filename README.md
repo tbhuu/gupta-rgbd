@@ -1,114 +1,118 @@
 # Run s-gupta's rgbd repository
 
-This is a note on how to install R-CNN (Regions with Convolutional Neural Network Features) on Ubuntu with CUDA. This tutorial assumes that your Ubuntu is already installed with CUDA.
+This is a note on how to run the code of "Perceptual Organization and Recognition of Indoor Scenes from RGB-D Images" (CVPR 2013) by S. Gupta.
+The code works on Ubuntu evironment.
 
-Check out the **Error Found** section below if you encounter any errors while following the installation process.
+Check out the **Problems Found** section below if you encounter any errors while following the instructions.
 
-## Installation
-1. **Caffe** Installation
-  * R-CNN is built using **Caffe** deep learning framework. First, we will install all **Caffe**'s dependencies by following **Caffe** documentation.
-  ```sh
-$ sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler libboost-all-dev
-$ sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
-  ```
-  * Default BLAS library for **Caffe** is ATLAS. We will use OpenBlas for better performance.
-  ```sh
-  $ sudo apt-get install libopenblas-dev
-  ```
-  * Install OpenCV. There's a GitHub that provides easier installation of OpenCV so we will use this one. The script shows how to install OpenCV 2.4.9, if you want to install another version, just run the corresponding script in the GitHub.
-  ```sh
-  $ git clone https://github.com/jayrambhia/Install-OpenCV.git
-  $ cd Ubuntu/2.4
-  $ chmod +x opencv2_4_9.sh
-  $ ./opencv2_4_9.sh
-  ```
-  * Get the version of **Caffe** that is compatible with **R-CNN**.
-  ```sh
-  $ wget https://github.com/BVLC/caffe/archive/v0.999.tar.gz
-  $ tar -xvzf v0.999.tar.gz
-  $ mv caffe-0.999 caffe-rcnn
-  $ cd caffe-rcnn
-  ```
-  * Create Makefile.config file
-  ```sh
-  $ cp Makefile.config.example Makefile.config
-  ```
-  * Specify BLAS and your MATLAB directory inside Makefile.config.
-  ```sh
-  BLAS := open
-  MATLAB_DIR := /usr/local/MATLAB/R2013a # example
-  ```
-  * Install **Caffe**
-  ```sh
-  $ sudo make all
-  $ sudo make test
-  $ sudo make runtest
-  ```
-  * Build **Caffe** for MATLAB
-  ```sh
-  $ sudo make matcaffe
-  ```
-  * Create environment variable `$CAFFE_ROOT`. Suppose you are inside `caffe-rcnn` directory
-  ```sh
-  $ export CAFFE_ROOT=$(pwd)
-  ```
-2. **R-CNN** installation
-  * Clone the **R-CNN** repository
-  ```sh
-  $ git clone https://github.com/rbgirshick/rcnn.gi
-  $ cd rcnn
-  ```
-  * **R-CNN** expects to find **Caffe** inside `external/caffe` so we will create a symlink here.
-  ```sh
-  $ ln -sf $CAFFE_ROOT external/caffe
-  ```
-  * Start MATLAB inside `r-cnn` directory and run code `startup.m`. You will be asked to download code for `Selective Search`, just hit any key to download the code. After successfully download, you will see the message `R-CNN startup done`.
-  * Run script `rccn_build.m` for building `liblinear` and `Selective Search`. Ignore all warning messages.
-  * Check if everything has been installed correctly by running `caffe('get_init_key')`. You should see the code outputs `-2`.
-  * Use script from branch ilsvrc to download precomputed models.
-  ```sh
-  $ git checkout ilsvrc
-  $ ./data/fetch_data.sh
-  ```
-  * Run demo with script `rcnn_demo.m`
+## Instructions
+1. **rbgd** repository
+  * Clone the **rgbd** repository
+    ```sh
+    $ git clone https://github.com/s-gupta/rgbd.git
+    $ cd rgbd
+    ```
+  * Switch to branch **dev**
+    ```sh
+    $ git checkout dev
+    ```
+2. Pretrained models
+  * Download the **Pretrained models**
+  http://www.cs.berkeley.edu/~sgupta/cvpr13/model.tgz
+  * Extract the compressed models to folder **rgbd**
+    ```sh
+    $ tar -xvf /path/to/model.tgz
+    ```
+3. Dependencies
+  * All dependencies are stored in folder **external**. You can use the scripts external/build_external.sh to build them.
+    ```sh
+    $ sh external/build_external.sh
+    ```
+  * These libraries include:
+  a. gPb-UCM from http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_full.tgz
 
-## Errors Found
-1. Error when `sudo make runtest` (building **Caffe**).
-  * Error message
-  ```sh
-  src/caffe/util/math_functions.cu(140):error:calling a __host__function("std::signbit<float> ") from a __global__ function("caffe::sgnbit_kernel<float> ") is not allowed
+  b. VLFeat from http://www.vlfeat.org/
 
-src/caffe/util/math_functions.cu(140): error: calling a __host__function("std::signbit<double> ") from a __global__ function("caffe::sgnbit_kernel<double> ") is not allowed
+  c. liblinear from http://www.csie.ntu.edu.tw/~cjlin/liblinear/
 
-2 errors detected in the compilation of "/tmp/tmpxft_00009fb3_00000000-12_math_functions.compute_35.cpp1.ii".
-make: *** [build/src/caffe/util/math_functions.cuo] Error 2
-  ```
-  * Fix by: in `caffe/include/caffe/util/math_functions.hpp`, change from:
-  ```c++
-  using std::signbit;
-  DEFINE_CAFFE_CPU_UNARY_FUNC(sgnbit, y[i] = signbit(x[i])); 
-  ```
-  * to:
-  ```c++
-  // using std::signbit;
-  DEFINE_CAFFE_CPU_UNARY_FUNC(sgnbit, y[i] = std::signbit(x[i]));
-  ```
-2. Error when using **Caffe** in **R-CNN** with MATLAB
-  * Error message
-  ```sh
-  ImportError: libcudart.so.7.0: cannot open shared object file: No such file or directory
-  ```
+  d. liblinear dense from http://ttic.uchicago.edu/~smaji/projects/digits/
+
+  e. SIFT color desprictors from http://www.colordescriptors.com, v2.1
+    * Set executable permission for colorDescriptor
+    ```sh
+    $ chmod +x external/colorDescriptor
+    ```
+  f. Image Stack Library https://code.google.com/p/imagestack/
+    * Set executable permission for ImageStack
+    ```sh
+    $ chmod +x external/ImageStack
+    ```
+  
+4. Run the matlab code
+  a. Open matlab, navigate to folder **rgbd**, run **startup.m**
+  b. Setup the directories for storing results
+    ```sh
+    $ 
+    ```
+  c. You can run the system on a new pair of RGB-D image by using the **runAll.m** function
+    * Provide the following parameters for **runAll.m**:
+        ** imNum: id for the output, it could be any integer starting from 1
+        ** rgbImage: the RGB image
+        ** depthImage: the depth image
+        ** cameraMatrix: the parameters of the Kinect camera, it is used to project the depth image into the point cloud, you can find the Kinect parameters in the toolbox of the NYU v2 Dataset (http://cs.nyu.edu/~silberman/code/toolbox_nyu_depth_v2.zip)
+    * Example:
+      ```sh
+      matlab > rgbImage = imread(rgbName)
+      matlab > depthImage = imread(depthName)
+      matlab > cameraMatrix = load(cameraName) 
+      matlab > runAll(1, rgbImage, depthImage, cameraMatrix)
+      ```
+  d. We also provide a sample pair of RGB-D image for testing the system
+    * Download two files **img_5001.png** and **img_5001.mat** in this repository and put it in folder **rgbd**
+    * Since **img_5001.mat** contains the precomputed point cloud, you need to modify the code in **runAll.m** from:
+      ```sh
+      33. [x3 y3 z3] = getPointCloudFromZ(double(depthImage*100), cameraMatrix, 1);
+      34. save(fullfile(paths.pcDir, [imName '.mat']), 'x3', 'y3', 'z3');
+      ```
+    * into:
+      ```sh
+      33. %[x3 y3 z3] = getPointCloudFromZ(double(depthImage*100), cameraMatrix, 1);
+      34. x3 = depthImage.x3;
+      35. y3 = depthImage.y3;
+      36. z3 = depthImage.z3;
+      37. save(fullfile(paths.pcDir, [imName '.mat']), 'x3', 'y3', 'z3');
+      ```
+    * Example:
+      ```sh
+      matlab > rgbImage = imread('img_5001.png')
+      matlab > depthImage = load('img_5001.mat')
+      matlab > runAll(1, rgbImage, depthImage, [])
+      ```
+## Problems Found
+1. Performance
+  * It takes a fair amount of time to run a pair of RGB-D image. You can speed up the performace by replacing **parfor** statement with **for** statement
+2. Missing libraries when building the dependencies in folder **external** 
   * Fix by:
-  ```sh
-  $ sudo ldconfig /usr/local/cuda/lib64
-  ```
-  * If the error is still not resolved, then open `~\.profile` file and append ` LD_LIBRARY_PATH="/usr/lib:/usr/local/cuda/lib64:/usr/local/cuda/lib"`, then run `source ~/.profile`.
-3. Error when using **Caffe** in **R-CNN** with MATLAB
-  * Error message
-  ```sh
-  Invalid MEX-file '.../rcnn/external/caffe/matlab/caffe/caffe.mexa64':/usr/local/MATLAB/R2013a/bin/glnxa64/../../sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.15'not found (required by .../rcnn/external/caffe/matlab/caffe/caffe.mexa64)
-  ```
-  * Fix by:
-  ```sh
-  $ sudo ln -sf /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16 /usr/local/MATLAB/R2012a/bin/glnxa64/libstdc++.so.6
-  ```
+    ```sh
+    $ sudo apt-get install libname
+    ```
+3. Cannot set executable permission for **colorDescriptor** and **ImageStack**
+  * If you store your repository in a NTFS/FAT hard drive, you cannot set executable permission
+  * Fix by: moving colorDescriptor and ImageStack to Ubuntu hard drive
+    ```sh
+    $ mv external/colorDescriptor /home/path/to/dir
+    $ mv external/ImageStack /home/path/to/dir 
+    ```
+  * then set the permission as instructed above
+  * modify the paths to these dependencies in COM/getPaths.m from:
+    ```sh
+    46. pathstr = fileparts(mfilename('fullpath'));
+		47. paths.siftLib = fullfile(pathstr, '..', 'external', 'colorDescriptor');
+		48. paths.imageStackLib = fullfile(pathstr, '..', 'external', 'ImageStack');
+    ```
+  * into:
+    ```sh
+    46. pathstr = fileparts(mfilename('fullpath'));
+		47. paths.siftLib = fullfile('/home/path/to/dir', 'colorDescriptor');
+		48. paths.imageStackLib = fullfile('/home/path/to/dir', 'ImageStack');
+    ```
