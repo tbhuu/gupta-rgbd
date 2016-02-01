@@ -7,19 +7,19 @@ Check out the **Problems Found** section below if you encounter any errors while
 
 ## Instructions
 1. **rbgd** repository
-  * Clone the **rgbd** repository
+  * Clone the **rgbd** repository.
     ```sh
     $ git clone https://github.com/s-gupta/rgbd.git
     $ cd rgbd
     ```
-  * Switch to branch **dev**
+  * Switch to branch **dev**.
     ```sh
     $ git checkout dev
     ```
 2. Pretrained models
-  * Download the **Pretrained models**
+  * Download the **Pretrained models**.
   http://www.cs.berkeley.edu/~sgupta/cvpr13/model.tgz
-  * Extract the compressed models to folder **rgbd**
+  * Extract the compressed models to folder **rgbd**.
     ```sh
     $ tar -xvf /path/to/model.tgz
     ```
@@ -38,21 +38,28 @@ Check out the **Problems Found** section below if you encounter any errors while
   d. liblinear dense from http://ttic.uchicago.edu/~smaji/projects/digits/
 
   e. SIFT color desprictors from http://www.colordescriptors.com, v2.1
-    * Set executable permission for colorDescriptor
+    * Set executable permission for colorDescriptor.
     ```sh
     $ chmod +x external/colorDescriptor
     ```
   f. Image Stack Library https://code.google.com/p/imagestack/
-    * Set executable permission for ImageStack
+    * Set executable permission for ImageStack.
     ```sh
     $ chmod +x external/ImageStack
     ```
   
 4. Run the matlab code
   a. Open matlab, navigate to folder **rgbd**, run **startup.m**
-  b. Setup the directories for storing results
+  b. Setup the directories for storing results.
     ```sh
-    $ 
+    $ mkdir cachedir/release/cache
+    $ mkdir cachedir/release/cache/sceneOuts
+    $ mkdir cachedir/release/cache/ucmFeatures
+    $ mkdir cachedir/release/cache/ucmFeatures/features
+    $ mkdir cachedir/release/cache/visOut
+    $ mkdir cachedir/release/cache/visOut/cc
+    $ mkdir cachedir/release/cache/visOut/ss
+    $ mkdir cachedir/release/cache/visOut/ucm
     ```
   c. You can run the system on a new pair of RGB-D image by using the **runAll.m** function
     * Provide the following parameters for **runAll.m**:
