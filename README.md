@@ -154,3 +154,4 @@ Check out the **Problems Found** section below if you encounter any problems whi
  47. paths.siftLib = fullfile('/home/path/to/dir', 'colorDescriptor');
  48. paths.imageStackLib = fullfile('/home/path/to/dir', 'ImageStack');
  ```
+ * Make sure that the ImageStack library is executable. To ensure that your computer will not crash/hang when running the system, put a break points at line 19 in the file segmentation/jointBilateral.m. Stop running immediately if the system cannot call ImageStack library. This is because jointBilateral.m contains a recursive call that will be executed if ImageStack doesn't work.
