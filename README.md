@@ -25,7 +25,9 @@ Check out the **Problems Found** section below if you encounter any errors while
 
   All dependencies are stored in folder **external**. You can use the scripts external/build_external.sh to build them.
   ```sh
-  $ sh external/build_external.sh
+  $ cd external
+  $ sh build_external.sh
+  $ cd ..
   ```
     
   These libraries are:
@@ -40,6 +42,7 @@ Check out the **Problems Found** section below if you encounter any errors while
    
     e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
      * Set executable permission for colorDescriptor.
+    
     ```sh
     $ chmod +x external/colorDescriptor
     ```
