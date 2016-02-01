@@ -16,8 +16,7 @@ Check out the **Problems Found** section below if you encounter any errors while
   $ git checkout dev
   ```
 2. Pretrained models
-  * Download the **Pretrained models**.
-  http://www.cs.berkeley.edu/~sgupta/cvpr13/model.tgz
+  * Download the **Pretrained models**: http://www.cs.berkeley.edu/~sgupta/cvpr13/model.tgz.
   * Extract the compressed models to folder **rgbd**.
   ```sh
   $ tar -xvf /path/to/model.tgz
