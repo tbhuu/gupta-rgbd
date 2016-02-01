@@ -43,9 +43,9 @@ Check out the **Problems Found** section below if you encounter any errors while
     e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
      * Set executable permission for colorDescriptor.
     
-    ```sh
-    $ chmod +x external/colorDescriptor
-    ```
+   ```sh
+   $ chmod +x external/colorDescriptor
+   ```
    
    f. Image Stack Library https://code.google.com/p/imagestack/.
     * Set executable permission for ImageStack.
