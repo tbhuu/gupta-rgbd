@@ -11,44 +11,44 @@ Check out the **Problems Found** section below if you encounter any errors while
  $ git clone https://github.com/s-gupta/rgbd.git
  $ cd rgbd
  ```
-  * Switch to branch **dev**.
-  ```sh
-  $ git checkout dev
-  ```
+ * Switch to branch **dev**.
+ ```sh
+ $ git checkout dev
+ ```
 2. Pretrained models
-  * Download the **Pretrained models**: http://www.cs.berkeley.edu/~sgupta/cvpr13/model.tgz.
-  * Extract the compressed models to folder **rgbd**.
-  ```sh
-  $ tar -xvf /path/to/model.tgz
-  ```
+ * Download the **Pretrained models**: http://www.cs.berkeley.edu/~sgupta/cvpr13/model.tgz.
+ * Extract the compressed models to folder **rgbd**.
+ ```sh
+ $ tar -xvf /path/to/model.tgz
+ ```
 3. Dependencies
 
-All dependencies are stored in folder **external**. You can use the scripts external/build_external.sh to build them.
-```sh
-$ sh external/build_external.sh
-```
-  
-These libraries are:
+  All dependencies are stored in folder **external**. You can use the scripts external/build_external.sh to build them.
+  ```sh
+  $ sh external/build_external.sh
+  ```
+    
+  These libraries are:
 
-  a. gPb-UCM from http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_full.tgz.
- 
-  b. VLFeat from http://www.vlfeat.org/.
- 
-  c. liblinear from http://www.csie.ntu.edu.tw/~cjlin/liblinear/.
- 
-  d. liblinear dense from http://ttic.uchicago.edu/~smaji/projects/digits/.
- 
-  e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
-   * Set executable permission for colorDescriptor.
-   ```sh
-   $ chmod +x external/colorDescriptor
-   ```
+    a. gPb-UCM from http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_full.tgz.
+   
+    b. VLFeat from http://www.vlfeat.org/.
+   
+    c. liblinear from http://www.csie.ntu.edu.tw/~cjlin/liblinear/.
+   
+    d. liblinear dense from http://ttic.uchicago.edu/~smaji/projects/digits/.
+   
+    e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
+     * Set executable permission for colorDescriptor.
+     ```sh
+     $ chmod +x external/colorDescriptor
+     ```
   
-  f. Image Stack Library https://code.google.com/p/imagestack/
-   * Set executable permission for ImageStack.
-   ```sh
-   $ chmod +x external/ImageStack
-   ```
+    f. Image Stack Library https://code.google.com/p/imagestack/
+     * Set executable permission for ImageStack.
+     ```sh
+     $ chmod +x external/ImageStack
+     ```
    
 4. Run the matlab code
  * Open matlab, navigate to folder **rgbd**, run **startup.m**.
