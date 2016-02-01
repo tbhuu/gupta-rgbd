@@ -2,7 +2,7 @@
 
 This is a note on how to run the code of "Perceptual Organization and Recognition of Indoor Scenes from RGB-D Images" (CVPR 2013) by S. Gupta. The code works on Ubuntu evironment.
 
-Check out the **Problems Found** section below if you encounter any errors while following the instructions.
+Check out the **Problems Found** section below if you encounter any problems while following the instructions.
 
 ## Instructions
 1. **rbgd** repository
@@ -103,7 +103,7 @@ Check out the **Problems Found** section below if you encounter any errors while
 
 ## Problems Found
 1. Performance
- * It takes a fair amount of time to run a pair of RGB-D image. You can speed up the performace by replacing **parfor** statement with **for** statement.
+ * It takes a fair amount of time to run a pair of RGB-D image. You can speed up the performace by replacing **parfor** statement with **for** statement in the matlab code.
 2. Missing libraries when building the dependencies in folder **external** 
  * Fix by:
  ```sh
