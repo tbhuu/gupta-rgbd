@@ -51,7 +51,7 @@ Check out the **Problems Found** section below if you encounter any problems whi
    ```
    
    f. Image Stack Library https://code.google.com/p/imagestack/.
-    * Set executable permission for ImageStack.
+    * After building all the dependencies, set executable permission for ImageStack.
     ```sh
     $ chmod +x external/ImageStack
     ```
