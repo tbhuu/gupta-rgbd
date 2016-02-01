@@ -53,7 +53,7 @@ Check out the **Problems Found** section below if you encounter any problems whi
     $ mkdir external/imagestack-src/bin/build
     ```
     
-  You can use the scripts external/build_external.sh to build them.
+  The script external/build_external.sh help you build all these dependencies. However, you need to change line 3 and 10 in this script from "make" to "make -f Makefile".
   ```sh
   $ cd external
   $ sh build_external.sh
