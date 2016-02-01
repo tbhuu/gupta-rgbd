@@ -19,7 +19,7 @@ Check out the **Problems Found** section below if you encounter any problems whi
  * Download the **Pretrained models**: http://www.cs.berkeley.edu/~sgupta/cvpr13/model.tgz.
  * Extract the compressed models to folder **rgbd**.
  ```sh
- $ tar -xvf /path/to/model.tgz
+ $ tar -xvf /path/to/model.tar
  ```
 3. Dependencies
 
