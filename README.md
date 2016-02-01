@@ -31,17 +31,17 @@ Check out the **Problems Found** section below if you encounter any problems whi
    
     b. VLFeat from http://www.vlfeat.org/.
    
-    c. liblinear from http://www.csie.ntu.edu.tw/~cjlin/liblinear/.
-     * In the Makefile of external/liblinear-1.94/matlab, you need to modify the MATLABDIR to points to where you install MATLAB, for example:
-     ```sh
-     MATLABDIR ?= /usr/local/MATLAB/R2015a
-     ```
+   c. liblinear from http://www.csie.ntu.edu.tw/~cjlin/liblinear/.
+    * In the Makefile of external/liblinear-1.94/matlab, you need to modify the MATLABDIR to points to where you install MATLAB, for example:
+    ```sh
+    MATLABDIR ?= /usr/local/MATLAB/R2015a
+    ```
    
-    d. liblinear dense from http://ttic.uchicago.edu/~smaji/projects/digits/.
-     * In the Makefile of external/liblinear-1.5-dense/matlab, you need to modify the MATLABDIR to points to where you install MATLAB, for example:
-     ```sh
-     MATLABDIR ?= /usr/local/MATLAB/R2015a
-     ```
+   d. liblinear dense from http://ttic.uchicago.edu/~smaji/projects/digits/.
+    * In the Makefile of external/liblinear-1.5-dense/matlab, you need to modify the MATLABDIR to points to where you install MATLAB, for example:
+    ```sh
+    MATLABDIR ?= /usr/local/MATLAB/R2015a
+    ```
    
     e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
      * Set executable permission for colorDescriptor.
