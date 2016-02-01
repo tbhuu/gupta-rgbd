@@ -71,6 +71,7 @@ Check out the **Problems Found** section below if you encounter any problems whi
   * Set executable permission for ImageStack.
   ```sh
   $ chmod +x ImageStack
+  $ cd ..
   ```
    
 4. Run the matlab code
