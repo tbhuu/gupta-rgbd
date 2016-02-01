@@ -30,25 +30,25 @@ Check out the **Problems Found** section below if you encounter any errors while
   
  * These libraries are listed below.
 
- a. gPb-UCM from http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_full.tgz.
+  a. gPb-UCM from http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_full.tgz.
  
- b. VLFeat from http://www.vlfeat.org/.
+  b. VLFeat from http://www.vlfeat.org/.
  
- c. liblinear from http://www.csie.ntu.edu.tw/~cjlin/liblinear/.
+  c. liblinear from http://www.csie.ntu.edu.tw/~cjlin/liblinear/.
  
- d. liblinear dense from http://ttic.uchicago.edu/~smaji/projects/digits/.
+  d. liblinear dense from http://ttic.uchicago.edu/~smaji/projects/digits/.
  
- e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
-  * Set executable permission for colorDescriptor.
-  ```sh
-  $ chmod +x external/colorDescriptor
-  ```
+  e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
+   * Set executable permission for colorDescriptor.
+   ```sh
+   $ chmod +x external/colorDescriptor
+   ```
   
- f. Image Stack Library https://code.google.com/p/imagestack/
-  * Set executable permission for ImageStack.
-  ```sh
-  $ chmod +x external/ImageStack
-  ```
+  f. Image Stack Library https://code.google.com/p/imagestack/
+   * Set executable permission for ImageStack.
+   ```sh
+   $ chmod +x external/ImageStack
+   ```
 4. Run the matlab code
  a. Open matlab, navigate to folder **rgbd**, run **startup.m**.
  b. Setup the directories for storing results.
