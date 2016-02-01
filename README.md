@@ -32,12 +32,14 @@ Check out the **Problems Found** section below if you encounter any problems whi
     b. VLFeat from http://www.vlfeat.org/.
    
    c. liblinear from http://www.csie.ntu.edu.tw/~cjlin/liblinear/.
+    * The liblinear that already exists in the **rgbd** repository does not seem to be working. You should delete the folder liblinear-1.94. Then, you download the library using the link above, extract it, rename it to liblinear-1.94 and copy it to folder external.
     * In the Makefile of external/liblinear-1.94/matlab, you need to modify the MATLABDIR to points to where you install MATLAB, for example:
     ```sh
     MATLABDIR ?= /usr/local/MATLAB/R2015a
     ```
    
    d. liblinear dense from http://ttic.uchicago.edu/~smaji/projects/digits/.
+    * The liblinear dense that already exists in the **rgbd** repository does not seem to be working. You should delete the folder liblinear-1.5.-dense. Then, you download the library using the link above, extract it, rename it to liblinear-1.5-dense and copy it to folder external.
     * In the Makefile of external/liblinear-1.5-dense/matlab, you need to modify the MATLABDIR to points to where you install MATLAB, for example:
     ```sh
     MATLABDIR ?= /usr/local/MATLAB/R2015a
@@ -46,7 +48,7 @@ Check out the **Problems Found** section below if you encounter any problems whi
     e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
    
    f. Image Stack Library https://code.google.com/p/imagestack/.
-    * The Image Stack Lib that already exists in the **rgbd** repository does not seem to be working. You should delete the folder imagestack-src. The, you download the library using the link above, extract it, rename it to imagestack-src and copy it to folder external.
+    * The Image Stack Lib that already exists in the **rgbd** repository does not seem to be working. You should delete the folder imagestack-src. Then, you download the library using the link above, extract it, rename it to imagestack-src and copy it to folder external.
     * Create the following folders:
     ```sh
     $ mkdir external/imagestack-src/bin
