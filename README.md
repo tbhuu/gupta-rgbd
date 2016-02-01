@@ -23,12 +23,7 @@ Check out the **Problems Found** section below if you encounter any problems whi
  ```
 3. Dependencies
 
-  All dependencies are stored in folder **external**. You can use the scripts external/build_external.sh to build them.
-  ```sh
-  $ cd external
-  $ sh build_external.sh
-  $ cd ..
-  ```
+  All dependencies are stored in folder **external**.
     
   These libraries are:
 
@@ -37,8 +32,16 @@ Check out the **Problems Found** section below if you encounter any problems whi
     b. VLFeat from http://www.vlfeat.org/.
    
     c. liblinear from http://www.csie.ntu.edu.tw/~cjlin/liblinear/.
+     * In the Makefile of external/liblinear-1.94/matlab, you need to modify the MATLABDIR to points to where you install MATLAB, for example:
+     ```sh
+     MATLABDIR ?= /usr/local/MATLAB/R2015a
+     ```
    
     d. liblinear dense from http://ttic.uchicago.edu/~smaji/projects/digits/.
+     * In the Makefile of external/liblinear-1.5-dense/matlab, you need to modify the MATLABDIR to points to where you install MATLAB, for example:
+     ```sh
+     MATLABDIR ?= /usr/local/MATLAB/R2015a
+     ```
    
     e. SIFT color desprictors from http://www.colordescriptors.com, v2.1.
      * Set executable permission for colorDescriptor.
@@ -52,6 +55,12 @@ Check out the **Problems Found** section below if you encounter any problems whi
     ```sh
     $ chmod +x external/ImageStack
     ```
+  You can use the scripts external/build_external.sh to build them.
+  ```sh
+  $ cd external
+  $ sh build_external.sh
+  $ cd ..
+  ```
    
 4. Run the matlab code
  * Open matlab, navigate to folder **rgbd**, run **startup.m**.
