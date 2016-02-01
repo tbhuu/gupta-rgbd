@@ -43,7 +43,6 @@ Check out the **Problems Found** section below if you encounter any errors while
      ```sh
      $ chmod +x external/colorDescriptor
      ```
-  
     f. Image Stack Library https://code.google.com/p/imagestack/
      * Set executable permission for ImageStack.
      ```sh
@@ -65,10 +64,10 @@ Check out the **Problems Found** section below if you encounter any errors while
  ```
  * You can run the system on a new pair of RGB-D image by using the **runAll.m** function.
    * Provide the following parameters for **runAll.m**:
-    * imNum: id for the output, it could be any integer starting from 1
-    * rgbImage: the RGB image
-    * depthImage: the depth image
-    * cameraMatrix: the parameters of the Kinect camera, it is used to project the depth image into the point cloud, you can find the Kinect parameters in the toolbox of the NYU v2 Dataset (http://cs.nyu.edu/~silberman/code/toolbox_nyu_depth_v2.zip)
+     * imNum: id for the output, it could be any integer starting from 1
+     * rgbImage: the RGB image
+     * depthImage: the depth image
+     * cameraMatrix: the parameters of the Kinect camera, it is used to project the depth image into the point cloud, you can find the Kinect parameters in the toolbox of the NYU v2 Dataset (http://cs.nyu.edu/~silberman/code/toolbox_nyu_depth_v2.zip)
  
    * Example:
    ```sh
@@ -78,26 +77,26 @@ Check out the **Problems Found** section below if you encounter any errors while
    matlab > runAll(1, rgbImage, depthImage, cameraMatrix)
    ```
  * We also provide a sample pair of RGB-D image for testing the system
-  * Download two files **img_5001.png** and **img_5001.mat** in this repository and put it in folder **rgbd**.
-  * Since **img_5001.mat** contains the precomputed point cloud, you need to modify the code in **runAll.m** from:
-  ```sh
-  33. [x3 y3 z3] = getPointCloudFromZ(double(depthImage*100), cameraMatrix, 1);
-  34. save(fullfile(paths.pcDir, [imName '.mat']), 'x3', 'y3', 'z3');
-  ```
-  * into:
-  ```sh
-  33. %[x3 y3 z3] = getPointCloudFromZ(double(depthImage*100), cameraMatrix, 1);
-  34. x3 = depthImage.x3;
-  35. y3 = depthImage.y3;
-  36. z3 = depthImage.z3;
-  37. save(fullfile(paths.pcDir, [imName '.mat']), 'x3', 'y3', 'z3');
-  ```
-  * Example:
-  ```sh
-  matlab > rgbImage = imread('img_5001.png')
-  matlab > depthImage = load('img_5001.mat')
-  matlab > runAll(1, rgbImage, depthImage, [])
-  ```
+   * Download two files **img_5001.png** and **img_5001.mat** in this repository and put it in folder **rgbd**.
+   * Since **img_5001.mat** contains the precomputed point cloud, you need to modify the code in **runAll.m** from:
+   ```sh
+   33. [x3 y3 z3] = getPointCloudFromZ(double(depthImage*100), cameraMatrix, 1);
+   34. save(fullfile(paths.pcDir, [imName '.mat']), 'x3', 'y3', 'z3');
+   ```
+   * into:
+   ```sh
+   33. %[x3 y3 z3] = getPointCloudFromZ(double(depthImage*100), cameraMatrix, 1);
+   34. x3 = depthImage.x3;
+   35. y3 = depthImage.y3;
+   36. z3 = depthImage.z3;
+   37. save(fullfile(paths.pcDir, [imName '.mat']), 'x3', 'y3', 'z3');
+   ```
+   * Example:
+   ```sh
+   matlab > rgbImage = imread('img_5001.png')
+   matlab > depthImage = load('img_5001.mat')
+   matlab > runAll(1, rgbImage, depthImage, [])
+   ```
 
 ## Problems Found
 1. Performance
