@@ -44,11 +44,11 @@ Check out the **Problems Found** section below if you encounter any errors while
      $ chmod +x external/colorDescriptor
      ```
    
-    f. Image Stack Library https://code.google.com/p/imagestack/.
-     * Set executable permission for ImageStack.
-     ```sh
-     $ chmod +x external/ImageStack
-     ```
+   f. Image Stack Library https://code.google.com/p/imagestack/.
+    * Set executable permission for ImageStack.
+    ```sh
+    $ chmod +x external/ImageStack
+    ```
    
 4. Run the matlab code
  * Open matlab, navigate to folder **rgbd**, run **startup.m**.
@@ -69,13 +69,13 @@ Check out the **Problems Found** section below if you encounter any errors while
       * rgbImage: the RGB image.
        * depthImage: the depth image.
         * cameraMatrix: the parameters of the Kinect camera. It is used to project the depth image into the point cloud. You can find the Kinect parameters in the toolbox of the NYU v2 Dataset (http://cs.nyu.edu/~silberman/code/toolbox_nyu_depth_v2.zip).
-   * Example:
-   ```sh
-   matlab > rgbImage = imread(rgbName)
-   matlab > depthImage = imread(depthName)
-   matlab > cameraMatrix = load(cameraName) 
-   matlab > runAll(1, rgbImage, depthImage, cameraMatrix)
-   ```
+    * Example:
+    ```sh
+    matlab > rgbImage = imread(rgbName)
+    matlab > depthImage = imread(depthName)
+    matlab > cameraMatrix = load(cameraName) 
+    matlab > runAll(1, rgbImage, depthImage, cameraMatrix)
+    ```
  * We also provide a sample pair of RGB-D image for testing the system
    * Download two files **img_5001.png** and **img_5001.mat** in this repository and put it in folder **rgbd**.
    * Since **img_5001.mat** contains the precomputed point cloud, you need to modify the code in **runAll.m** from:
