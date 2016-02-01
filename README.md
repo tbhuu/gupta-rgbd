@@ -30,6 +30,7 @@ Check out the **Problems Found** section below if you encounter any problems whi
     a. gPb-UCM from http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_full.tgz.
    
     b. VLFeat from http://www.vlfeat.org/.
+    * The VLFEAT that already exists in the **rgbd** repository does not seem to be working. You should delete the folder vlfeat. Then, you download the library using the link above, extract it, rename it to vlfeat and copy it to folder external.
    
    c. liblinear from http://www.csie.ntu.edu.tw/~cjlin/liblinear/.
     * The liblinear that already exists in the **rgbd** repository does not seem to be working. You should delete the folder liblinear-1.94. Then, you download the library using the link above, extract it, rename it to liblinear-1.94 and copy it to folder external.
