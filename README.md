@@ -43,7 +43,8 @@ Check out the **Problems Found** section below if you encounter any errors while
      ```sh
      $ chmod +x external/colorDescriptor
      ```
-    f. Image Stack Library https://code.google.com/p/imagestack/
+   
+    f. Image Stack Library https://code.google.com/p/imagestack/.
      * Set executable permission for ImageStack.
      ```sh
      $ chmod +x external/ImageStack
@@ -64,11 +65,10 @@ Check out the **Problems Found** section below if you encounter any errors while
  ```
  * You can run the system on a new pair of RGB-D image by using the **runAll.m** function.
    * Provide the following parameters for **runAll.m**:
-     * imNum: id for the output, it could be any integer starting from 1
-     * rgbImage: the RGB image
-     * depthImage: the depth image
-     * cameraMatrix: the parameters of the Kinect camera, it is used to project the depth image into the point cloud, you can find the Kinect parameters in the toolbox of the NYU v2 Dataset (http://cs.nyu.edu/~silberman/code/toolbox_nyu_depth_v2.zip)
- 
+     * imNum: id for the output, it could be any integer starting from 1.
+      * rgbImage: the RGB image.
+       * depthImage: the depth image.
+        * cameraMatrix: the parameters of the Kinect camera. It is used to project the depth image into the point cloud. You can find the Kinect parameters in the toolbox of the NYU v2 Dataset (http://cs.nyu.edu/~silberman/code/toolbox_nyu_depth_v2.zip).
    * Example:
    ```sh
    matlab > rgbImage = imread(rgbName)
