@@ -167,3 +167,4 @@ Check out the **Remarks** section below for (naive) evaluation of the system's p
 * Computing colorDescriptor also takes a long time (due to external library).
 * Recognition result on the sample pair of RGB-D image (img_5001.png and img_5001.mat) is good, but there are still errors.
 * Sample result:
+![alt tag](https://github.com/tbhuu/gupta-rgbd/blob/master/result.png)
