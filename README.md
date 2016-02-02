@@ -4,6 +4,8 @@ This is a note on how to run the code of "Perceptual Organization and Recognitio
 
 Check out the **Problems Found** section below if you encounter any problems while following the instructions.
 
+Check out the **Remarks** section below for (naive) evaluation of the system's performance.
+
 ## Instructions
 1. **rbgd** repository
  * Clone the **rgbd** repository.
@@ -158,3 +160,10 @@ Check out the **Problems Found** section below if you encounter any problems whi
  48. paths.imageStackLib = fullfile('/home/path/to/dir', 'ImageStack');
  ```
  * Make sure that the ImageStack library is executable. To ensure that your computer will not crash/hang when running the system, put a break points at line 19 in the file segmentation/jointBilateral.m. Stop running immediately if the system cannot call ImageStack library. This is because jointBilateral.m contains a recursive call that will be executed if ImageStack doesn't work.
+
+##Remarks
+* It takes quite a long time to perform recognition on a pair of RGB-D image (about 3-5 mins).
+* Computing UCM features takes the longest time. Fortunately, the system stores UCM results. So you just have to run it once.
+* Computing colorDescriptor also takes a long time (due to external library).
+* Recognition result on the sample pair of RGB-D image (img_5001.png and img_5001.mat) is good, but there are still errors.
+* Sample result:
