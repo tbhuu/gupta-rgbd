@@ -166,7 +166,7 @@ Check out the **Remarks** section below for (naive) evaluation of the system's p
  * Make sure that the ImageStack library is executable. To ensure that your computer will not crash/hang when running the system, put a break points at line 19 in the file segmentation/jointBilateral.m. Stop running immediately if the system cannot call ImageStack library. This is because jointBilateral.m contains a recursive call that will be executed if ImageStack doesn't work.
 
 ##Remarks
-* The system runs smoothly on a 4GB RAM, i7 GPU.
+* The system runs smoothly on a 4GB RAM, i7 GPU computer.
 * It takes quite a long time to perform recognition on a pair of RGB-D image (about 3-5 mins).
 * Computing UCM features takes the longest time. Fortunately, the system stores UCM results. So you just have to run it once.
 * Computing colorDescriptor also takes a long time (due to external library).
