@@ -59,6 +59,10 @@ Check out the **Remarks** section below for (naive) evaluation of the system's p
     $ mkdir external/imagestack-src/bin/build
     ```
     
+  In order to build these libraries, you must add matlab entry to the launcher.
+  ```sh
+  $ sudo apt-get install matlab-support
+  ```
   The script external/build_external.sh help you build all these dependencies. However, you need to change line 3, 10, 23 in this script from "make" to "make -f Makefile". After that, run the script as follows:
   ```sh
   $ cd external
